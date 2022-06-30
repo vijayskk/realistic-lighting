@@ -7,12 +7,16 @@ import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader'
+import Stats from 'stats-js'
 
 // const hours = new Date().getHours()
 // const isDayTime = hours > 6 && hours < 20
 
 console.log("The Model used here : Ancient Corinth - Peirene Fountain fuzzelhjb is licensed under Creative Commons Attribution");
 
+var stats = Stats();
+stats.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
+document.body.appendChild( stats.dom )
 
 const scene = new THREE.Scene()
 
@@ -91,11 +95,12 @@ composer.addPass( renderPass );
 
 function animate(){
 
-
+  stats.begin()
 
   controls.update()
 
   composer.render()
+  stats.end()
   requestAnimationFrame(animate)
 }
 animate()
