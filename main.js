@@ -65,6 +65,9 @@ loader.load('/gltf/model.gltf',(obj)=>{
   })
   
   scene.add(obj.scene)
+  document.getElementById("loading").innerText = ""
+  document.getElementById("info").innerText = "DRAG TO VIEW AROUND"
+
 })
 
 const hdriloader = new RGBELoader()
