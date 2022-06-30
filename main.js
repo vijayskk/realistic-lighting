@@ -11,6 +11,8 @@ import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader'
 // const hours = new Date().getHours()
 // const isDayTime = hours > 6 && hours < 20
 
+console.log("The Model used here : Ancient Corinth - Peirene Fountain fuzzelhjb is licensed under Creative Commons Attribution");
+
 
 const scene = new THREE.Scene()
 
